@@ -1,0 +1,74 @@
+{
+  "app": {
+    "title": "برنامه آب و هوا",
+    "subtitle": "اطلاعات آب و هوا را در لحظه دریافت کنید"
+  },
+  "search": {
+    "placeholder": "جستجوی شهر...",
+    "noResults": "شهری یافت نشد",
+    "loading": "در حال جستجو..."
+  },
+  "weather": {
+    "feelsLike": "احساس می‌شود مثل",
+    "humidity": "رطوبت",
+    "wind": "باد",
+    "pressure": "فشار",
+    "visibility": "دید",
+    "uvIndex": "شاخص UV",
+    "cloudCover": "پوشش ابر",
+    "precipitation": "بارش",
+    "lastUpdated": "آخرین بروزرسانی",
+    "sunrise": "طلوع آفتاب",
+    "sunset": "غروب آفتاب",
+    "moonPhase": "فاز ماه",
+    "airQuality": "کیفیت هوا",
+    "forecast": "پیش‌بینی ۵ روزه",
+    "hourlyForecast": "پیش‌بینی ساعتی",
+    "high": "بالاترین",
+    "low": "پایین‌ترین",
+    "chanceOfRain": "احتمال بارندگی"
+  },
+  "units": {
+    "celsius": "°س",
+    "fahrenheit": "°ف",
+    "kmh": "کیلومتر/ساعت",
+    "mph": "مایل/ساعت",
+    "hPa": "هکتوپاسکال",
+    "km": "کیلومتر",
+    "mm": "میلی‌متر",
+    "percent": "%"
+  },
+  "airQuality": {
+    "good": "خوب",
+    "moderate": "متوسط",
+    "unhealthySensitive": "ناسالم برای گروه‌های حساس",
+    "unhealthy": "ناسالم",
+    "veryUnhealthy": "بسیار ناسالم",
+    "hazardous": "خطرناک"
+  },
+  "errors": {
+    "fetchFailed": "دریافت اطلاعات آب و هوا ناموفق بود",
+    "cityNotFound": "شهر یافت نشد",
+    "networkError": "خطای شبکه. لطفاً اتصال خود را بررسی کنید."
+  },
+  "settings": {
+    "language": "زبان",
+    "theme": "تم",
+    "units": "واحدها",
+    "light": "روشن",
+    "dark": "تاریک",
+    "metric": "متریک",
+    "imperial": "امپریال"
+  },
+  "days": {
+    "sunday": "یکشنبه",
+    "monday": "دوشنبه",
+    "tuesday": "سه‌شنبه",
+    "wednesday": "چهارشنبه",
+    "thursday": "پنجشنبه",
+    "friday": "جمعه",
+    "saturday": "شنبه",
+    "today": "امروز",
+    "tomorrow": "فردا"
+  }
+}

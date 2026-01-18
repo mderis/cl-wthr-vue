@@ -1,0 +1,74 @@
+{
+  "app": {
+    "title": "Weather App",
+    "subtitle": "Get real-time weather information"
+  },
+  "search": {
+    "placeholder": "Search for a city...",
+    "noResults": "No cities found",
+    "loading": "Searching..."
+  },
+  "weather": {
+    "feelsLike": "Feels like",
+    "humidity": "Humidity",
+    "wind": "Wind",
+    "pressure": "Pressure",
+    "visibility": "Visibility",
+    "uvIndex": "UV Index",
+    "cloudCover": "Cloud Cover",
+    "precipitation": "Precipitation",
+    "lastUpdated": "Last updated",
+    "sunrise": "Sunrise",
+    "sunset": "Sunset",
+    "moonPhase": "Moon Phase",
+    "airQuality": "Air Quality",
+    "forecast": "5-Day Forecast",
+    "hourlyForecast": "Hourly Forecast",
+    "high": "High",
+    "low": "Low",
+    "chanceOfRain": "Chance of rain"
+  },
+  "units": {
+    "celsius": "°C",
+    "fahrenheit": "°F",
+    "kmh": "km/h",
+    "mph": "mph",
+    "hPa": "hPa",
+    "km": "km",
+    "mm": "mm",
+    "percent": "%"
+  },
+  "airQuality": {
+    "good": "Good",
+    "moderate": "Moderate",
+    "unhealthySensitive": "Unhealthy for Sensitive Groups",
+    "unhealthy": "Unhealthy",
+    "veryUnhealthy": "Very Unhealthy",
+    "hazardous": "Hazardous"
+  },
+  "errors": {
+    "fetchFailed": "Failed to fetch weather data",
+    "cityNotFound": "City not found",
+    "networkError": "Network error. Please check your connection."
+  },
+  "settings": {
+    "language": "Language",
+    "theme": "Theme",
+    "units": "Units",
+    "light": "Light",
+    "dark": "Dark",
+    "metric": "Metric",
+    "imperial": "Imperial"
+  },
+  "days": {
+    "sunday": "Sunday",
+    "monday": "Monday",
+    "tuesday": "Tuesday",
+    "wednesday": "Wednesday",
+    "thursday": "Thursday",
+    "friday": "Friday",
+    "saturday": "Saturday",
+    "today": "Today",
+    "tomorrow": "Tomorrow"
+  }
+}

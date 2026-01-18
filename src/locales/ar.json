@@ -1,0 +1,74 @@
+{
+  "app": {
+    "title": "تطبيق الطقس",
+    "subtitle": "احصل على معلومات الطقس في الوقت الفعلي"
+  },
+  "search": {
+    "placeholder": "ابحث عن مدينة...",
+    "noResults": "لم يتم العثور على مدن",
+    "loading": "جاري البحث..."
+  },
+  "weather": {
+    "feelsLike": "يشعر وكأنه",
+    "humidity": "الرطوبة",
+    "wind": "الرياح",
+    "pressure": "الضغط",
+    "visibility": "الرؤية",
+    "uvIndex": "مؤشر الأشعة فوق البنفسجية",
+    "cloudCover": "الغطاء السحابي",
+    "precipitation": "هطول الأمطار",
+    "lastUpdated": "آخر تحديث",
+    "sunrise": "شروق الشمس",
+    "sunset": "غروب الشمس",
+    "moonPhase": "طور القمر",
+    "airQuality": "جودة الهواء",
+    "forecast": "توقعات 5 أيام",
+    "hourlyForecast": "التوقعات بالساعة",
+    "high": "أعلى",
+    "low": "أدنى",
+    "chanceOfRain": "احتمال هطول الأمطار"
+  },
+  "units": {
+    "celsius": "°م",
+    "fahrenheit": "°ف",
+    "kmh": "كم/س",
+    "mph": "ميل/س",
+    "hPa": "هكتوباسكال",
+    "km": "كم",
+    "mm": "مم",
+    "percent": "%"
+  },
+  "airQuality": {
+    "good": "جيد",
+    "moderate": "معتدل",
+    "unhealthySensitive": "غير صحي للمجموعات الحساسة",
+    "unhealthy": "غير صحي",
+    "veryUnhealthy": "غير صحي جداً",
+    "hazardous": "خطر"
+  },
+  "errors": {
+    "fetchFailed": "فشل في جلب بيانات الطقس",
+    "cityNotFound": "لم يتم العثور على المدينة",
+    "networkError": "خطأ في الشبكة. يرجى التحقق من اتصالك."
+  },
+  "settings": {
+    "language": "اللغة",
+    "theme": "المظهر",
+    "units": "الوحدات",
+    "light": "فاتح",
+    "dark": "داكن",
+    "metric": "متري",
+    "imperial": "إمبريالي"
+  },
+  "days": {
+    "sunday": "الأحد",
+    "monday": "الاثنين",
+    "tuesday": "الثلاثاء",
+    "wednesday": "الأربعاء",
+    "thursday": "الخميس",
+    "friday": "الجمعة",
+    "saturday": "السبت",
+    "today": "اليوم",
+    "tomorrow": "غداً"
+  }
+}
