@@ -5,16 +5,17 @@ import type { City, WeatherResponse, UnitSystem } from '../types/weather'
 const API_KEY = import.meta.env.VITE_WEATHER_API_KEY || 'demo'
 const BASE_URL = 'https://api.weatherapi.com/v1'
 
-export function useWeather() {
-  const weather = ref<WeatherResponse | null>(null)
-  const cities = ref<City[]>([])
-  const loading = ref(false)
-  const searchLoading = ref(false)
-  const error = ref<string | null>(null)
-  const unitSystem = ref<UnitSystem>(
-    (localStorage.getItem('unitSystem') as UnitSystem) || 'metric'
-  )
+// Shared state (singleton pattern)
+const weather = ref<WeatherResponse | null>(null)
+const cities = ref<City[]>([])
+const loading = ref(false)
+const searchLoading = ref(false)
+const error = ref<string | null>(null)
+const unitSystem = ref<UnitSystem>(
+  (typeof localStorage !== 'undefined' && localStorage.getItem('unitSystem') as UnitSystem) || 'metric'
+)
 
+export function useWeather() {
   const temperature = computed(() => {
     if (!weather.value) return null
     return unitSystem.value === 'metric'
@@ -86,11 +87,12 @@ export function useWeather() {
         }
       )
       weather.value = response.data
-    } catch (err: any) {
+    } catch (err: unknown) {
       console.error('Failed to fetch weather:', err)
-      if (err.response?.status === 400) {
+      const axiosError = err as { response?: { status: number } }
+      if (axiosError.response?.status === 400) {
         error.value = 'cityNotFound'
-      } else if (err.response?.status === 401) {
+      } else if (axiosError.response?.status === 401) {
         error.value = 'invalidApiKey'
       } else {
         error.value = 'fetchFailed'
@@ -103,7 +105,9 @@ export function useWeather() {
 
   const setUnitSystem = (system: UnitSystem): void => {
     unitSystem.value = system
-    localStorage.setItem('unitSystem', system)
+    if (typeof localStorage !== 'undefined') {
+      localStorage.setItem('unitSystem', system)
+    }
   }
 
   const getAirQualityLevel = (index: number): string => {
