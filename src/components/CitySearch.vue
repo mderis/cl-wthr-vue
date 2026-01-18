@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { ref, watch } from 'vue'
+import { ref } from 'vue'
 import { useI18n } from 'vue-i18n'
 import { useDebounceFn } from '@vueuse/core'
 import type { City } from '../types/weather'
@@ -13,47 +13,36 @@ const { t } = useI18n()
 const { searchCities, searchLoading, cities } = useWeather()
 
 const searchQuery = ref('')
-const isOpen = ref(false)
 const selectedCity = ref<City | null>(null)
 
 const debouncedSearch = useDebounceFn(async (query: string) => {
   if (query.length >= 2) {
     await searchCities(query)
-    isOpen.value = cities.value.length > 0
-  } else {
-    isOpen.value = false
   }
 }, 300)
 
-watch(searchQuery, (newQuery) => {
-  if (newQuery && newQuery !== selectedCity.value?.name) {
-    debouncedSearch(newQuery)
+const onSearchInput = (value: string) => {
+  searchQuery.value = value
+  if (value && value.length >= 2) {
+    debouncedSearch(value)
   }
-})
+}
 
 const selectCity = (city: City) => {
   selectedCity.value = city
   searchQuery.value = `${city.name}, ${city.country}`
-  isOpen.value = false
   emit('select', city)
-}
-
-const handleModelUpdate = (value: unknown) => {
-  if (value && typeof value === 'object' && 'id' in value) {
-    selectCity(value as City)
-  }
 }
 
 const clearSearch = () => {
   searchQuery.value = ''
   selectedCity.value = null
-  isOpen.value = false
 }
 </script>
 
 <template>
   <v-autocomplete
-    v-model="searchQuery"
+    v-model:search="searchQuery"
     :items="cities"
     :loading="searchLoading"
     :label="t('search.placeholder')"
@@ -61,13 +50,13 @@ const clearSearch = () => {
     item-title="name"
     item-value="id"
     return-object
-    hide-no-data
     clearable
     variant="outlined"
     density="comfortable"
     prepend-inner-icon="mdi-magnify"
     class="city-search"
-    @update:model-value="handleModelUpdate"
+    @update:search="onSearchInput"
+    @update:model-value="selectCity"
     @click:clear="clearSearch"
   >
     <template #item="{ item, props }">
@@ -75,7 +64,6 @@ const clearSearch = () => {
         v-bind="props"
         :title="item.raw.name"
         :subtitle="`${item.raw.region}, ${item.raw.country}`"
-        @click="selectCity(item.raw)"
       >
         <template #prepend>
           <v-icon icon="mdi-map-marker" color="primary" />
